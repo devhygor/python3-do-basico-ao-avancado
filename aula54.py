@@ -20,13 +20,19 @@ Bom dia 0-11, Boa tarde 12-17 e Boa noite 18-23.
 """
 
 def hora():
-    hora = int(input("Digite a hora: "))
-    if 0 <= hora <= 11:
-        print("Bom dia!")
-    elif 12 <= hora <= 17:
-        print("Boa tarde!")
-    elif 18 <= hora <= 23:
-        print("Boa noite!")
+    entrada = input("Digite a hora em números inteiros: ")
+    try:
+        hora = int(entrada)
+        if 0 <= hora <= 11:
+            print("Bom dia!")
+        elif 12 <= hora <= 17:
+            print("Boa tarde!")
+        elif 18 <= hora <= 23:
+            print("Boa noite!")
+        else:
+            print("Hora inválida.")
+    except:
+        print("Por favor, digite apenas números inteiros")
 
 """
 Faça um programa que peça o primeiro nome do usuário. Se o nome tiver 4 letras ou
