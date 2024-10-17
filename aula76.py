@@ -20,16 +20,26 @@ palavra_corrigida = ''
 
 tentativas = 0
 
-while len(palavra_corrigida) != len(palavra_secreta):
+# while len(palavra_corrigida) != len(palavra_secreta):
+while True:
     tentativas += 1
     print(f'Tentativa n° {tentativas}')
     letra = input('DIGITE UMA LETRA: ').upper()
+    
+    if len(letra) != 1:
+        print('DIGITE APENAS UMA LETRA!')
+        continue
+
     if letra in palavra_secreta:
         palavra_corrigida += letra
         if len(palavra_corrigida) == 1:
             print(f'Letra correta: "{letra}"\n')
         else:
             print(f'Letras corretas: "{palavra_corrigida}"\n')
+        
+        for letra_secreta in palavra_secreta:
+            if letra_secreta in palavra_secreta:
+                print(letra_secreta)
     else:
         print(f'A Letra "{letra}", nao existe na palavra secreta!\n')
 else:
